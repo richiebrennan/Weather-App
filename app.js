@@ -28,7 +28,7 @@ function getSearchMethod(searchTerm) {
 //Get the weather for today
 function searchWeather(searchTerm) {
   getSearchMethod(searchTerm);
-  fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
   .then(result => {
     return result.json();
   })
@@ -40,7 +40,7 @@ function searchWeather(searchTerm) {
 //Get the weather for the next five days
 function forecast(searchTerm) {
   getSearchMethod(searchTerm);
-  fetch(`http://api.openweathermap.org/data/2.5/forecast/?q=${searchTerm}&appid=${appId}&units=${units}`)
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/?q=${searchTerm}&appid=${appId}&units=${units}`)
   .then(result => {
     return result.json();
   })
